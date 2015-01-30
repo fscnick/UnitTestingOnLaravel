@@ -80,8 +80,8 @@ class DataTableTest extends TestCase {
 	 * This method will be invoked after setUp().
 	 *
 	 */
-	protected function assertPreConditions()
-    {
+	protected function assertPreConditions(){
+
     	if($this->getName() == "testLoadDataTable"){
 			DataTableTest::$temp=DataTableTest::$temp."testLoadDataTable_assertPre ";
 		}else if($this->getName() == "testLoadDataTable2"){
@@ -96,8 +96,8 @@ class DataTableTest extends TestCase {
      *
      * NOTE: If an error or an assertion faild, this method would not be called.
      */
-    protected function assertPostConditions()
-    {
+    protected function assertPostConditions(){
+
     	if($this->getName() == "testLoadDataTable"){
 			DataTableTest::$temp=DataTableTest::$temp."testLoadDataTable_assertPost ";
 		}else if($this->getName() == "testLoadDataTable2"){
@@ -107,8 +107,8 @@ class DataTableTest extends TestCase {
 		}
     }
 
-	protected function onNotSuccessfulTest(Exception $e)
-    {
+	protected function onNotSuccessfulTest(Exception $e){
+
     	if($this->getName() == "testLoadDataTable"){
 			DataTableTest::$temp=DataTableTest::$temp."testLoadDataTable_NotSuccess ";
 		}else if($this->getName() == "testLoadDataTable2"){
@@ -119,7 +119,11 @@ class DataTableTest extends TestCase {
         throw $e;
     }
 
+    /**
+     * This test method will pass the testing.
+     */
 	public function testLoadDataTable(){
+
 		DataTableTest::$temp=DataTableTest::$temp.__METHOD__." ";
 
 		$response = $this->call('GET', 'dataTableTest');
@@ -128,18 +132,26 @@ class DataTableTest extends TestCase {
 
 	}
 
+	/**
+     * This test method will cause a testing error.
+     */
 	public function testLoadDataTable2(){
+
 		DataTableTest::$temp=DataTableTest::$temp.__METHOD__." ";
 		
 		$response = $this->call('GET','dataTableTest');
 
-		print_r($aa);
+		print_r($aa);		// this line will cause an testing error, there is no variable $aa.
 		$this->assertResponseStatus(403);
 
 		
 	} 
 
+	/**
+     * This test method will cause a testing failure.
+     */
 	public function testNextExamine(){
+
 		DataTableTest::$temp=DataTableTest::$temp.__METHOD__." ";
 
 		$response = $this->call('POST', 
@@ -147,7 +159,7 @@ class DataTableTest extends TestCase {
 								array('id' => '6160020')
 								);
 
-		$this->assertEquals('15', $response->getContent());
+		$this->assertEquals('15', $response->getContent());		
 
 	}
 
