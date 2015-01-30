@@ -139,7 +139,7 @@ class DataTableTest extends TestCase {
 		
 	} 
 
-	public function testNext(){
+	public function testNextExamine(){
 		DataTableTest::$temp=DataTableTest::$temp.__METHOD__." ";
 
 		$response = $this->call('POST', 
