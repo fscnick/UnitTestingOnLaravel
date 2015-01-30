@@ -91,11 +91,11 @@ class DataTableTest extends TestCase {
 		}
 	}
 
-    /**
-     * This method will be invoked before tearDown().
-     *
-     * NOTE: If an error or an assertion faild, this method would not be called.
-     */
+	/**
+	 * This method will be invoked before tearDown().
+	 *
+	 * NOTE: If an error or an assertion faild, this method would not be called.
+	 */
 	protected function assertPostConditions(){
 
 		if($this->getName() == "testLoadDataTable"){
@@ -108,9 +108,9 @@ class DataTableTest extends TestCase {
 	}
 
 	/**
-     * This method will be invoked after tearDown() when the testing is failed or an error.
-     *
-     */
+	 * This method will be invoked after tearDown() when the testing is failed or an error.
+	 *
+	 */
 	protected function onNotSuccessfulTest(Exception $e){
 
 		if($this->getName() == "testLoadDataTable"){
@@ -123,9 +123,9 @@ class DataTableTest extends TestCase {
 		throw $e;
 	}
 
-    /**
-     * This test method will pass the testing.
-     */
+	/**
+	 * This test method will pass the testing.
+	 */
 	public function testLoadDataTable(){
 
 		DataTableTest::$temp=DataTableTest::$temp.__METHOD__." ";
@@ -137,8 +137,8 @@ class DataTableTest extends TestCase {
 	}
 
 	/**
-     * This test method will cause a testing error.
-     */
+	 * This test method will cause a testing error.
+	 */
 	public function testLoadDataTable2(){
 
 		DataTableTest::$temp=DataTableTest::$temp.__METHOD__." ";
@@ -152,8 +152,8 @@ class DataTableTest extends TestCase {
 	} 
 
 	/**
-     * This test method will cause a testing failure.
-     */
+	 * This test method will cause a testing failure.
+	 */
 	public function testNextExamine(){
 
 		DataTableTest::$temp=DataTableTest::$temp.__METHOD__." ";
