@@ -82,42 +82,46 @@ class DataTableTest extends TestCase {
 	 */
 	protected function assertPreConditions(){
 
-    	if($this->getName() == "testLoadDataTable"){
+		if($this->getName() == "testLoadDataTable"){
 			DataTableTest::$temp=DataTableTest::$temp."testLoadDataTable_assertPre ";
 		}else if($this->getName() == "testLoadDataTable2"){
 			DataTableTest::$temp=DataTableTest::$temp."testLoadDataTable2_assertPre ";
 		}else if($this->getName() == "testNextExamine"){
 			DataTableTest::$temp=DataTableTest::$temp."testNextExamine_assertPre ";
 		}
-    }
+	}
 
     /**
      * This method will be invoked before tearDown().
      *
      * NOTE: If an error or an assertion faild, this method would not be called.
      */
-    protected function assertPostConditions(){
+	protected function assertPostConditions(){
 
-    	if($this->getName() == "testLoadDataTable"){
+		if($this->getName() == "testLoadDataTable"){
 			DataTableTest::$temp=DataTableTest::$temp."testLoadDataTable_assertPost ";
 		}else if($this->getName() == "testLoadDataTable2"){
 			DataTableTest::$temp=DataTableTest::$temp."testLoadDataTable2_assertPost ";
 		}else if($this->getName() == "testNextExamine"){
 			DataTableTest::$temp=DataTableTest::$temp."testNextExamine_assertPost ";
 		}
-    }
+	}
 
+	/**
+     * This method will be invoked after tearDown() when the testing is failed or an error.
+     *
+     */
 	protected function onNotSuccessfulTest(Exception $e){
 
-    	if($this->getName() == "testLoadDataTable"){
+		if($this->getName() == "testLoadDataTable"){
 			DataTableTest::$temp=DataTableTest::$temp."testLoadDataTable_NotSuccess ";
 		}else if($this->getName() == "testLoadDataTable2"){
 			DataTableTest::$temp=DataTableTest::$temp."testLoadDataTable2_NotSuccess ";
 		}else if($this->getName() == "testNextExamine"){
 			DataTableTest::$temp=DataTableTest::$temp."testNextExamine_NotSuccess ";
 		}
-        throw $e;
-    }
+		throw $e;
+	}
 
     /**
      * This test method will pass the testing.
